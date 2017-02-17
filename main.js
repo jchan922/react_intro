@@ -1,13 +1,13 @@
-var myReactComponent = React.createClass({
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var MyComponent = React.createClass({
     render: function(){
-        console.log(this.props);
-        var coloredHeadlines = this.props.colors.map( function(color, idx){
-            return React.createElement('h1', {style: {color: color}, key: idx}, color + " Headline")
-        })
-        return React.createElement('div', null, coloredHeadlines);
+        // return React.createElement('h1', null, "headline!")
+        return <h1>headline!</h1>
     }
 })
 
-var actualDOMNode = document.getElementById('app');
+ReactDOM.render(<MyComponent />, document.getElementById('app'));
 
-ReactDOM.render(React.createElement(myReactComponent, {colors: ['blue', 'red', 'green']}), actualDOMNode);
+console.log("HELLO!");
